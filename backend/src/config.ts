@@ -2,10 +2,10 @@ import path from "node:path";
 import { z } from "zod";
 
 const envSchema = z.object({
-  HOST: z.string().default("127.0.0.1"),
+  HOST: z.string().default("0.0.0.0"),
   PORT: z.coerce.number().int().min(1).max(65535).default(8787),
   DATABASE_PATH: z.string().default("./data/agentcrash.sqlite"),
-  CORS_ORIGINS: z.string().default("http://localhost:8080,http://127.0.0.1:8080"),
+  CORS_ORIGINS: z.string().default("*"),
   LOG_LEVEL: z.enum(["fatal", "error", "warn", "info", "debug", "trace", "silent"]).default("info"),
 });
 

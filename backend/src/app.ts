@@ -64,7 +64,8 @@ export async function buildApp(config: AppConfig): Promise<AppContext> {
   await app.register(helmet, { contentSecurityPolicy: false });
   await app.register(cors, {
     origin(origin, callback) {
-      if (!origin || config.corsOrigins.includes(origin)) callback(null, true);
+      if (!origin || config.corsOrigins.includes("*") || config.corsOrigins.includes(origin))
+        callback(null, true);
       else
         callback(
           new AppError(403, "ORIGIN_NOT_ALLOWED", "The request origin is not allowed."),
