@@ -1,0 +1,9 @@
+node_modules
+dist
+.output
+.tanstack
+.wrangler
+coverage
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
