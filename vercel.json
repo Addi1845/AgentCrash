@@ -1,6 +1,6 @@
 {
   "framework": null,
   "installCommand": "npm install",
-  "buildCommand": "npm run build",
+  "buildCommand": "NITRO_PRESET=vercel npm run build",
   "outputDirectory": ".output/public"
 }
